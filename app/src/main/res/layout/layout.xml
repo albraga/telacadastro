@@ -94,5 +94,12 @@
         android:onClick="salvar"
         android:minHeight="48dp" />
 
+    <EditText
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/idsIdEditText" />
+
 </LinearLayout>
 </ScrollView>

@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText emailEditText;
     private EditText telcomercialEditText;
     private EditText celularEditText;
+    private EditText idsIdEditText;
+    private DBHelper meudb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +28,24 @@ public class MainActivity extends AppCompatActivity {
         emailEditText = (EditText) findViewById(R.id.emailEditText);
         telcomercialEditText = (EditText) findViewById(R.id.telcomercialEditText);
         celularEditText = (EditText) findViewById(R.id.celularEditText);
+        idsIdEditText = (EditText) findViewById(R.id.idsIdEditText);
+        meudb = new DBHelper(this);
     }
 
     public void salvar(View view) {
+        meudb.inserir(nomeEditText.getText().toString());
+        idsIdEditText.setText(meudb.numberOfRows());
         Context context = getApplicationContext();
-        CharSequence text = "Hello toast!";
+        CharSequence text = "Salvo com succecsso!";
         int duration = Toast.LENGTH_SHORT;
         Toast toast = Toast.makeText(context, text, duration);
         toast.show();
         limpar();
+    }
+
+    public void buscar(View view) {
+        int id = Integer.parseInt(idsIdEditText.getText().toString());
+        nomeEditText.setText(meudb.getData(id).toString());
     }
 
     private void limpar() {
