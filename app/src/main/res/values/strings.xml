@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TelaCadastro</string>
+    <string name="nome">Nome:</string>
+    <string name="empresa">Empresa:</string>
+    <string name="cargo">Cargo:</string>
+    <string name="email">E-mail:</string>
+    <string name="telcomercial">Telefone Comercial:</string>
+    <string name="celular">Celular:</string>
+    <string name="salvar">Salvar</string>
+</resources>
