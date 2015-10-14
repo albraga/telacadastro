@@ -12,7 +12,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/nomeEditText" />
+        android:id="@+id/nomeEditText"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,7 +24,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/empresaEditText" />
+        android:id="@+id/empresaEditText"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,7 +36,8 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/cargoEditText" />
+        android:id="@+id/cargoEditText"
+        android:inputType="text" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -80,6 +83,7 @@
         android:layout_height="wrap_content"
         android:text="@string/salvar"
         android:id="@+id/button"
-        android:layout_gravity="right" />
+        android:layout_gravity="right"
+        android:onClick="salvar" />
 
 </LinearLayout>
