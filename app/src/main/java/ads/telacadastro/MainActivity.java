@@ -1,6 +1,7 @@
 package ads.telacadastro;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -34,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void salvar(View view) {
         meudb.inserir(nomeEditText.getText().toString());
-        idsIdEditText.setText(meudb.numberOfRows());
         Context context = getApplicationContext();
         CharSequence text = "Salvo com succecsso!";
         int duration = Toast.LENGTH_SHORT;
@@ -45,7 +45,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void buscar(View view) {
         int id = Integer.parseInt(idsIdEditText.getText().toString());
-        nomeEditText.setText(meudb.getData(id).toString());
+        Cursor cursor = meudb.getData(id);
+        cursor.moveToFirst();
+        String nam = cursor.getString(cursor.getColumnIndex(DBHelper.CONTACTS_COLUMN_NAME));
+        nomeEditText.setText(nam);
     }
 
     private void limpar() {
